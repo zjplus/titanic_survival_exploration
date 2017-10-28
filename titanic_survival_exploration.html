@@ -12890,7 +12890,7 @@ JFWcyV6SpIoz2UuSVHH/P+VriMZB2iSiAAAAAElFTkSuQmCC
         <span class="c1"># 输入你自己的预测条件</span>
         <span class="k">if</span> <span class="n">passenger</span><span class="p">[</span><span class="s2">&quot;Sex&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;female&quot;</span><span class="p">:</span>
             <span class="n">predictions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">passenger</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">elif</span> <span class="n">passenger</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
             <span class="n">predictions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">predictions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -12912,7 +12912,7 @@ JFWcyV6SpIoz2UuSVHH/P+VriMZB2iSiAAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>问题3</strong>：当预测所有女性以及小于10岁的男性都存活的时候，预测的准确率会达到多少？</p>
-<p><strong>回答</strong>: 79.24%</p>
+<p><strong>回答</strong>: 79.35%</p>
 <p><strong>提示</strong>：你需要在下面添加一个代码区域，实现代码并运行来计算准确率。</p>
 
 </div>
@@ -12940,7 +12940,7 @@ JFWcyV6SpIoz2UuSVHH/P+VriMZB2iSiAAAAAElFTkSuQmCC
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predictions have an accuracy of 79.24%.
+<pre>Predictions have an accuracy of 79.35%.
 </pre>
 </div>
 </div>
@@ -14453,6 +14453,20 @@ KsokLklSRf1/zdn8+edbrv0AAAAASUVORK5CYII=
             <span class="n">predictions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">predictions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># 审阅的代码示例</span>
+<span class="c1">#         if passenger[&quot;Sex&quot;] == &quot;female&quot;:</span>
+<span class="c1">#             if passenger[&quot;Pclass&quot;] == 1 or passenger[&quot;Pclass&quot;] == 2:</span>
+<span class="c1">#                 predictions.append(1)</span>
+<span class="c1">#             else:</span>
+<span class="c1">#                 if passenger[&quot;Embarked&quot;] == &quot;C&quot; or passenger[&quot;Embarked&quot;] == &quot;Q&quot;:</span>
+<span class="c1">#                     predictions.append(1)</span>
+<span class="c1">#                 else:</span>
+<span class="c1">#                     predictions.append(0)</span>
+<span class="c1">#         else:</span>
+<span class="c1">#             if passenger[&quot;Age&quot;] &lt; 10.0:</span>
+<span class="c1">#                 predictions.append(1)</span>
+<span class="c1">#             else:</span>
+<span class="c1">#                 predictions.append(0)</span>
     
     <span class="c1"># 返回预测结果</span>
     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
